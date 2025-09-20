@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://cncginw8fs1i"]
+
+[ext_resource type="PackedScene" uid="uid://copjejs0pfy1b" path="res://Assets/Walking.tscn" id="1_fhhcb"]
+[ext_resource type="Script" uid="uid://bfisr2y2pp1ur" path="res://Assets/main.gd" id="1_yjg56"]
+[ext_resource type="PackedScene" uid="uid://dft4qdi3bdjw" path="res://Assets/Sports Car.glb" id="3_2e4wo"]
+[ext_resource type="PackedScene" uid="uid://bvhoqirb5e2yc" path="res://Assets/Tree.glb" id="3_h46cc"]
+[ext_resource type="PackedScene" uid="uid://de2odu8ikisqu" path="res://Assets/Pine.glb" id="5_m0djy"]
+[ext_resource type="PackedScene" uid="uid://q24yee0gkwyu" path="res://Assets/Rock Large.glb" id="6_2jwo7"]
+[ext_resource type="AudioStream" uid="uid://b83ajm4w3uybb" path="res://Sounds/gaming-game-minecraft-background-music-387000.mp3" id="7_gco83"]
+[ext_resource type="PackedScene" uid="uid://0t5qh8mvg8uo" path="res://Assets/Fern.glb" id="7_y8f0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhhcb"]
+albedo_color = Color(0.156863, 0.662745, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fhhcb"]
+material = SubResource("StandardMaterial3D_fhhcb")
+size = Vector3(350, 1, 350)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_yjg56")
+
+[node name="Walking" parent="." instance=ExtResource("1_fhhcb")]
+
+[node name="Walking2" parent="." instance=ExtResource("1_fhhcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91813, 1.90735e-06, 0.00536537)
+
+[node name="Walking3" parent="." instance=ExtResource("1_fhhcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8661, 0.267373, 0.199064)
+
+[node name="Walking4" parent="." instance=ExtResource("1_fhhcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6324, -0.206532, -0.797752)
+
+[node name="Walking5" parent="." instance=ExtResource("1_fhhcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.554275, 8.45109, -24.1322)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.817356, 0.576133, 0, -0.576133, 0.817356, -3.42091, 20.6103, 26.2408)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.784592, -0.35859, -0.505794, 0.607353, 0.608518, 0.510713, 0.124648, -0.707897, 0.69523, -10.9579, 32.2747, 25.4714)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.019, -1, 0.061)
+mesh = SubResource("BoxMesh_fhhcb")
+
+[node name="Sports Car" parent="." instance=ExtResource("3_2e4wo")]
+transform = Transform3D(-0.91062, 0, 7.948, 0, 8, 0, -7.948, 0, -0.91062, 3.93293, -0.914019, -26.071)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Root Scene" parent="Node3D" instance=ExtResource("3_h46cc")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.1653, 1.71337, -15.9794)
+
+[node name="Root Scene2" parent="Node3D" instance=ExtResource("3_h46cc")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -22.9745, -1.95935, -22.3157)
+
+[node name="Root Scene3" parent="Node3D" instance=ExtResource("3_h46cc")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 22.953, -2.01334, -14.6425)
+
+[node name="Root Scene4" parent="Node3D" instance=ExtResource("3_h46cc")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.87869, -0.64635, -39.1482)
+
+[node name="Root Scene5" parent="Node3D" instance=ExtResource("5_m0djy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.431, 0.691335, 1.24739)
+
+[node name="Root Scene6" parent="Node3D" instance=ExtResource("5_m0djy")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.95902, -3.55479, -39.1567)
+
+[node name="Root Scene7" parent="Node3D" instance=ExtResource("6_2jwo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5455, 0.16857, -1.74004)
+
+[node name="Root Scene8" parent="Node3D" instance=ExtResource("6_2jwo7")]
+transform = Transform3D(0.833514, -0.427913, 0.349492, 0.519033, 0.823266, -0.229863, -0.189364, 0.372992, 0.908305, -29.5451, -1.30603, -1.34018)
+
+[node name="Root Scene9" parent="Node3D" instance=ExtResource("6_2jwo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1894, -1.28354, 0.492592)
+
+[node name="Root Scene10" parent="Node3D" instance=ExtResource("5_m0djy")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37.2225, -3.25045, -4.77763)
+
+[node name="Root Scene11" parent="Node3D" instance=ExtResource("7_y8f0h")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.0125, -0.0591736, 5.63547)
+
+[node name="Root Scene12" parent="Node3D" instance=ExtResource("7_y8f0h")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -25.512, 0.609107, -12.7825)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_gco83")
